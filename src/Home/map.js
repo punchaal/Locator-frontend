@@ -4,8 +4,6 @@ import Marker from './Marker';
 import AddLocation from '../AddLocation/Location';
 
 export default function Map(props){
-
-
     const [markerClicked,setState] = useState(false)
     const [center] = useState({lat: 43.6532, lng: -79.3832 });
     const [zoom] = useState(0);
