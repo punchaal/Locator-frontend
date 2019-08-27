@@ -57,8 +57,7 @@ export default function Locations(props) {
     var [text,setText] = useState("Let's Plan!")
     const [expanded, setExpanded] = React.useState('panel1');
     const [places,setPlaces] = useState([])
-    const location = {
-    }
+    
     const { values, handleChange,handleFormSubmit} = useForm();
 
     const handlePanelChange = panel => (event, newExpanded) => {
@@ -78,10 +77,9 @@ export default function Locations(props) {
     return (
         <div>
             <Header />
-            {places.map((i)=>(
-            <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handlePanelChange('panel1')} id={i} >
+            <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handlePanelChange('panel1')} >
                 <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header" display="flex">
-                    <Typography>Location</Typography>
+                    <Typography>Toronto,ON</Typography>
                     <Grid container alignItems="flex-start" justify="flex-end" direction="row">
                         <Button variant="contained" onClick={handleButtonClick} style = {{marginRight:"30px"}}>{text}</Button>
                         <Button variant="contained" onClick = {deleteButtonClick}>Delete</Button>
@@ -127,7 +125,6 @@ export default function Locations(props) {
     </form>
                 </ExpansionPanelDetails>
             </ExpansionPanel>
-            ))}
         </div>
     );
 };
